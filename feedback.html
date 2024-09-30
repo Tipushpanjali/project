@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Feedback for the Event</h1>
+        
+        <form id="feedbackForm" action="submit_feedback.php" method="POST">
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>Select Rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <h2>Feedback Submitted</h2>
+        <div id="feedbackList">
+            <div class="feedback-item">
+                <strong>Rating: 5</strong><br>
+                <p>Excellent event! I really enjoyed it.</p>
+            </div>
+            <div class="feedback-item">
+                <strong>Rating: 4</strong><br>
+                <p>Great event, but the food could be improved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

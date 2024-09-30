@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        .container {
+            background-color: white; /* White background for the form */
+            padding: 20px; /* Padding inside the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 400px; /* Fixed width */
+        }
+        h2 {
+            text-align: center; /* Center the headings */
+        }
+        .form-group {
+            margin-bottom: 15px; /* Space between form elements */
+        }
+        label {
+            display: block; /* Block display for labels */
+            margin-bottom: 5px; /* Space below labels */
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%; /* Full width of the input fields */
+            padding: 10px; /* Padding inside the input fields */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px; /* Rounded corners for inputs */
+        }
+        button {
+            width: 100%; /* Full width of the button */
+            padding: 10px; /* Padding inside the button */
+            background-color: blue; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size for button text */
+            margin-top: 10px; /* Space above button */
+        }
+        button:hover {
+            background-color: darkblue; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create Event</h2>
+        <form id="createEventForm">
+            <div class="form-group">
+                <label for="event-title">Event Title</label>
+                <input type="text" id="event-title" name="event-title" required>
+            </div>
+            <div class="form-group">
+                <label for="event-date">Event Date</label>
+                <input type="date" id="event-date" name="event-date" required>
+            </div>
+            <div class="form-group">
+                <label for="event-time">Event Time</label>
+                <input type="time" id="event-time" name="event-time" required>
+            </div>
+            <div class="form-group">
+                <label for="event-location">Location</label>
+                <input type="text" id="event-location" name="event-location" required>
+            </div>
+            <div class="form-group">
+                <label for="event-description">Description</label>
+                <textarea id="event-description" name="event-description" rows="4" required></textarea>
+            </div>
+            <button type="submit">Create Event</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('createEventForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Get form values
+            const title = document.getElementById('event-title').value;
+            const date = document.getElementById('event-date').value;
+            const time = document.getElementById('event-time').value;
+            const location = document.getElementById('event-location').value;
+            const description = document.getElementById('event-description').value;
+
+            // Here you can handle the data as needed (e.g., send it to a server)
+            alert(`Event Created!\nTitle: ${title}\nDate: ${date}\nTime: ${time}\nLocation: ${location}\nDescription: ${description}`);
+        });
+    </script>
+</body>
+</html>

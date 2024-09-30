@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        .container {
+            background-color: white; /* White background for the forms */
+            padding: 20px; /* Padding inside the forms */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 400px; /* Fixed width */
+        }
+        h2 {
+            text-align: center; /* Center the headings */
+        }
+        .form-group {
+            margin-bottom: 15px; /* Space between form elements */
+        }
+        label {
+            display: block; /* Block display for labels */
+            margin-bottom: 5px; /* Space below labels */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%; /* Full width of the input fields */
+            padding: 10px; /* Padding inside the input fields */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px; /* Rounded corners for inputs */
+        }
+        button {
+            width: 100%; /* Full width of the button */
+            padding: 10px; /* Padding inside the button */
+            background-color: blue; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size for button text */
+        }
+        button:hover {
+            background-color: darkblue; /* Darker shade on hover */
+        }
+        .toggle-link {
+            text-align: center; /* Center align toggle link */
+            margin-top: 10px; /* Space above toggle link */
+        }
+        .error {
+            color: red; /* Error message color */
+            text-align: center; /* Center align error messages */
+            margin-top: 10px; /* Space above error messages */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Signup Form -->
+        <div id="signup-form">
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" name="signup-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="signup-password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="error" id="signup-error-message">
+                    
+                </div>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button onclick="window.location.href='home.html'">Login</button>
+                <div class="error" id="login-error-message"></div>
+            </form>
+        </div>
+
+        <div class="toggle-link">
+            <a href="#" id="toggle-to-login">Already have an account? Login</a>
+            <a href="#" id="toggle-to-signup" style="display:none;">Don't have an account? Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for form submission and toggling between forms
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulated signup validation
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            // Perform your signup logic here (e.g., send data to the server)
+            alert("Signup successful!"); // Alert on successful signup
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulated login validation
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            // Perform your login logic here (e.g., check credentials)
+            alert("Login successful!"); // Alert on successful login
+        });
+
+        // Toggle between login and signup forms
+        document.getElementById('toggle-to-login').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link action
+            document.getElementById('signup-form').style.display = 'none'; // Hide signup
+            document.getElementById('login-form').style.display = 'block'; // Show login
+            document.getElementById('toggle-to-login').style.display = 'none'; // Hide toggle link
+            document.getElementById('toggle-to-signup').style.display = 'block'; // Show toggle link
+        });
+
+        document.getElementById('toggle-to-signup').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link action
+            document.getElementById('signup-form').style.display = 'block'; // Show signup
+            document.getElementById('login-form').style.display = 'none'; // Hide login
+            document.getElementById('toggle-to-login').style.display = 'block'; // Show toggle link
+            document.getElementById('toggle-to-signup').style.display = 'none'; // Hide toggle link
+        });
+    </script>
+    
+</body>
+</html>

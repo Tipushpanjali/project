@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for centering */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        h1 {
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        button {
+            padding: 15px 30px; /* Padding inside the button */
+            background-color: blue; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Button text size */
+            margin: 10px; /* Space between buttons */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        button:hover {
+            background-color: darkblue; /* Darker shade on hover */
+        }
+        .container {
+            background-color: white; /* White background for the container */
+            padding: 20px; /* Padding inside the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Event Management System</h1>
+        <button onclick="window.location.href='create_event.html'">Create an Event</button>
+        <button onclick="window.location.href='update.html'">Update Events</button>
+        <button onclick="window.location.href='previous_events.html'">Previous Events</button>
+    </div>
+
+</body>
+</html>

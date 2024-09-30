@@ -1,0 +1,48 @@
+{% comment %} <?php
+include 'db.php';
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Fetch user from database
+    $result = $conn->query("SELECT * FROM users WHERE username='$username' AND password=MD5('$password')");
+    
+    if ($result->num_rows > 0) {
+        // User authenticated successfully
+        $_SESSION['username'] = $username;
+        header("Location: index.php");  // Redirect to the event listing page
+        exit();
+    } else {
+        $error = "Invalid username or password";
+    }
+}
+?> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Login to Event Management System</h1>
+
+    <?php if (isset($error)): ?>
+        <p style="color: red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+
+    <form method="POST" action="login.php">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

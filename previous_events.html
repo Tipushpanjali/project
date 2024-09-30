@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for centering */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: flex-start; /* Start at the top */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Padding around the page */
+        }
+        h2 {
+            text-align: center; /* Center the headings */
+            margin-bottom: 20px; /* Space below the heading */
+            color: #333; /* Dark gray color for heading */
+        }
+        .user-details {
+            background-color: #fff; /* White background for user details */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the user details */
+            margin-bottom: 20px; /* Space below user details */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Width of the user details section */
+            max-width: 600px; /* Max width for larger screens */
+            text-align: center; /* Center text */
+        }
+        .event-list {
+            background-color: #fff; /* White background for the event list */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Width of the event list */
+            max-width: 600px; /* Max width for larger screens */
+            padding: 20px; /* Padding inside the event list */
+            margin-bottom: 20px; /* Space below event list */
+        }
+        .event-item {
+            border-bottom: 1px solid #ccc; /* Divider between events */
+            padding: 10px 0; /* Padding for each event item */
+            display: flex; /* Flexbox for alignment */
+            justify-content: space-between; /* Space between title and button */
+            align-items: center; /* Center align items vertically */
+        }
+        .event-item:last-child {
+            border-bottom: none; /* Remove the border for the last item */
+        }
+        .event-title {
+            font-size: 20px; /* Font size for event title */
+            font-weight: bold; /* Bold title */
+            color: #007BFF; /* Primary color for titles */
+        }
+        .event-details {
+            margin-top: 5px; /* Space above details */
+            color: #555; /* Gray color for details */
+            font-size: 14px; /* Font size for details */
+        }
+        .event-description {
+            margin-top: 5px; /* Space above description */
+            color: #666; /* Dark gray color for description */
+            font-size: 14px; /* Font size for description */
+        }
+        .update-button, .cancel-button, .delete-button {
+            padding: 8px 12px; /* Padding inside the button */
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 14px; /* Font size for button text */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        .update-button:hover, .cancel-button:hover, .delete-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .registration-update-form {
+            display: none; /* Initially hidden */
+            margin-top: 10px; /* Space above form */
+            background-color: #f9f9f9; /* Light background for form */
+            padding: 10px; /* Padding inside the form */
+            border-radius: 5px; /* Rounded corners for form */
+        }
+        .registration-update-form input {
+            width: 100%; /* Full width for input */
+            padding: 8px; /* Padding inside the input */
+            margin-top: 5px; /* Space above input */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 4px; /* Rounded corners for inputs */
+        }
+        .back-button {
+            margin-top: 20px; /* Space above button */
+            padding: 10px 20px; /* Padding inside the button */
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-align: center; /* Center text in button */
+            font-size: 16px; /* Font size for button text */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        .back-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Upcoming Events</h2>
+
+    <div class="user-details">
+        <h3>User Details</h3>
+        <p><strong>Username:</strong> JohnDoe</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+    </div>
+
+    <div class="event-list">
+        <div class="event-item">
+            <div>
+                <div class="event-title">Web Development Workshop</div>
+                <div class="event-details">Date: 2024-10-15 | Time: 10:00 AM | Location: Conference Room A</div>
+                <div class="event-description">Join us for an interactive workshop on web development basics.</div>
+            </div>
+            <div>
+                <button class="update-button" onclick="toggleUpdateForm(this)">Update Registration</button>
+                <button class="delete-button" onclick="deleteEvent(this)">Delete</button>
+            </div>
+            <div class="registration-update-form">
+                <label for="num-attendees">Number of Attendees:</label>
+                <input type="number" id="num-attendees" placeholder="1" min="1">
+                <button class="cancel-button" onclick="cancelRegistration(this)">Cancel Registration</button>
+            </div>
+        </div>
+
+        <div class="event-item">
+            <div>
+                <div class="event-title">Networking Event</div>
+                <div class="event-details">Date: 2024-11-05 | Time: 05:00 PM | Location: Downtown Cafe</div>
+                <div class="event-description">Meet professionals and expand your network.</div>
+            </div>
+            <div>
+                <button class="update-button" onclick="toggleUpdateForm(this)">Update Registration</button>
+                <button class="delete-button" onclick="deleteEvent(this)">Delete</button>
+                <br>
+            </div>
+            <div class="registration-update-form">
+                <label for="num-attendees">Number of Attendees:</label>
+                <input type="number" id="num-attendees" placeholder="1" min="1">
+                <button class="cancel-button" onclick="cancelRegistration(this)">Cancel Registration</button>
+            </div>
+        </div>
+
+        <div class="event-item">
+            <div>
+                <div class="event-title">Team Building Retreat</div>
+                <div class="event-details">Date: 2024-12-01 | Time: 09:00 AM | Location: Lakeside Resort</div>
+                <div class="event-description">A day of fun activities aimed at improving teamwork.</div>
+            </div>
+            <div>
+                <button class="update-button" onclick="toggleUpdateForm(this)">Update Registration</button>
+                <br>
+                <button class="delete-button" onclick="deleteEvent(this)">Delete</button>
+            </div>
+            <div class="registration-update-form">
+                <label for="num-attendees">Number of Attendees:</label>
+                <input type="number" id="num-attendees" placeholder="1" min="1">
+                <button class="cancel-button" onclick="cancelRegistration(this)">Cancel Registration</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='fristpage.html'">Back to Home</button>
+
+    <script>
+        function deleteEvent(button) {
+            // Find the event item that contains the delete button
+            const eventItem = button.closest('.event-item'); // Get the closest event item
+            eventItem.remove(); // Remove the event item from the DOM
+            alert("Event deleted successfully!"); // Alert on successful deletion
+        }
+
+        function toggleUpdateForm(button) {
+            const updateForm = button.closest('.event-item').querySelector('.registration-update-form');
+            updateForm.style.display = updateForm.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
+        }
+
+        function cancelRegistration(button) {
+            const eventItem = button.closest('.event-item'); // Get the closest event item
+            const title = eventItem.querySelector('.event-title').textContent; // Get event title
+            alert(`Registration for "${title}" has been cancelled!`); // Alert on successful cancellation
+            deleteEvent(eventItem.querySelector('.delete-button')); // Remove event from the list
+        }
+    </script>
+
+</body>
+</html>

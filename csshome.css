@@ -1,0 +1,75 @@
+/* General Page Styling */
+body {
+      
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(227, 221, 213);
+      color: #333; /* Text color */
+  }
+  .login-button {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* 20px from the top */
+    right: 20px; /* 20px from the right */
+    background-color: rgb(117, 117, 244); /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for button text */
+}
+.login-button:hover {
+    background-color: rgb(108, 108, 227); /* Darker shade on hover */
+}
+
+
+  /* Header Styles */
+  h1 {
+      text-align: center;
+      font-size: 40px;
+      color: #214c7a;
+      margin-top: 20px;
+      font-family: 'Arial Black', sans-serif;
+  }
+  
+  
+  .center-title {
+      text-align: center;
+      font-family: 'Curlz MT', cursive;
+      font-size: 60px;
+      color: #b43c6c; /* Tomato color */
+      margin-top: 0;
+  }
+  
+  /* Marquee Styling */
+  marquee {
+      font-size: 19px;
+      color: #57bd6a; /* Orange Red color */
+      font-style: italic;
+      margin: 25px 0;
+      border : double;
+  }
+  
+  /* Additional Styling */
+  .container {
+      padding: 20px;
+      text-align: center;
+  }
+  
+  /* Footer */
+  footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 1px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 12px;
+  }
+  
+  footer p {
+      margin: 0;
+  }
+  

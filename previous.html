@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Events</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack items vertically */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Padding around the page */
+        }
+        h2 {
+            text-align: center; /* Center the headings */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        .event-list {
+            background-color: white; /* White background for the event list */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Width of the event list */
+            max-width: 600px; /* Max width for larger screens */
+            padding: 20px; /* Padding inside the event list */
+        }
+        .event-item {
+            border-bottom: 1px solid #ccc; /* Divider between events */
+            padding: 10px 0; /* Padding for each event item */
+        }
+        .event-item:last-child {
+            border-bottom: none; /* Remove the border for the last item */
+        }
+        .event-title {
+            font-size: 18px; /* Font size for event title */
+            font-weight: bold; /* Bold title */
+        }
+        .event-details {
+            margin-top: 5px; /* Space above details */
+            color: #555; /* Gray color for details */
+        }
+        .back-button {
+            margin-top: 20px; /* Space above button */
+            padding: 10px 20px; /* Padding inside the button */
+            background-color: blue; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-align: center; /* Center text in button */
+            font-size: 16px; /* Font size for button text */
+        }
+        .back-button:hover {
+            background-color: darkblue; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Previous Events</h2>
+    <div class="event-list">
+        <div class="event-item">
+            <div class="event-title">Workshop on Web Development</div>
+            <div class="event-details">Date: 2024-08-15 | Time: 10:00 AM | Location: Conference Room A</div>
+            <div class="event-description">An interactive workshop to learn the basics of web development.</div>
+        </div>
+        <div class="event-item">
+            <div class="event-title">Annual Team Building Retreat</div>
+            <div class="event-details">Date: 2024-06-10 | Time: 09:00 AM | Location: Lakeside Resort</div>
+            <div class="event-description">A fun-filled day of activities aimed at improving team cohesion.</div>
+        </div>
+        <div class="event-item">
+            <div class="event-title">Monthly Networking Event</div>
+            <div class="event-details">Date: 2024-05-20 | Time: 05:00 PM | Location: Downtown Cafe</div>
+            <div class="event-description">A chance to meet and network with industry professionals.</div>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+</body>
+</html>

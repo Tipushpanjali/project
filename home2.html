@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Attendees</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            display: flex; /* Flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: flex-start; /* Start at the top */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Padding around the page */
+        }
+        h2 {
+            text-align: center; /* Center the headings */
+            margin-bottom: 20px; /* Space below the heading */
+            color: #333; /* Dark gray color for heading */
+        }
+        .event-details {
+            background-color: #fff; /* White background for event details */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the event details */
+            margin-bottom: 20px; /* Space below event details */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Width of the event details section */
+            max-width: 600px; /* Max width for larger screens */
+        }
+        .attendee-list {
+            background-color: #fff; /* White background for attendee list */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Width of the attendee list */
+            max-width: 600px; /* Max width for larger screens */
+            padding: 20px; /* Padding inside the attendee list */
+            margin-bottom: 20px; /* Space below attendee list */
+        }
+        .attendee-item {
+            border-bottom: 1px solid #ccc; /* Divider between attendees */
+            padding: 10px 0; /* Padding for each attendee item */
+            display: flex; /* Flexbox for alignment */
+            justify-content: space-between; /* Space between name and details */
+            align-items: center; /* Center align items vertically */
+        }
+        .attendee-item:last-child {
+            border-bottom: none; /* Remove the border for the last item */
+        }
+        .attendee-name {
+            font-size: 16px; /* Font size for attendee name */
+            font-weight: bold; /* Bold name */
+            color: #007BFF; /* Primary color for names */
+        }
+        .attendee-email {
+            color: #555; /* Gray color for email */
+            font-size: 14px; /* Font size for email */
+        }
+        .back-button {
+            margin-top: 20px; /* Space above button */
+            padding: 10px 20px; /* Padding inside the button */
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-align: center; /* Center text in button */
+            font-size: 16px; /* Font size for button text */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        .back-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registered Attendees</h2>
+
+    <div class="event-details">
+        <h3>Event Title: Web Development Workshop</h3>
+        <p><strong>Date:</strong> 2024-10-15</p>
+        <p><strong>Time:</strong> 10:00 AM</p>
+        <p><strong>Location:</strong> Conference Room A</p>
+        <p><strong>Description:</strong> Join us for an interactive workshop on web development basics.</p>
+    </div>
+
+    <div class="attendee-list">
+        <h3>Attendee List</h3>
+        <div class="attendee-item">
+            <div>
+                <span class="attendee-name">Alice Smith</span>
+                <div class="attendee-email">alice@example.com</div>
+            </div>
+        </div>
+        <div class="attendee-item">
+            <div>
+                <span class="attendee-name">Bob Johnson</span>
+                <div class="attendee-email">bob@example.com</div>
+            </div>
+        </div>
+        <div class="attendee-item">
+            <div>
+                <span class="attendee-name">Charlie Brown</span>
+                <div class="attendee-email">charlie@example.com</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+</body>
+</html>
